@@ -1,0 +1,22 @@
+<label class="font-weight-bold">Counter name:</label>
+<!-- event binding -->
+<!-- <input type="text" class="form-control" (input)="onUpdateCounterName($event)"> -->
+
+<!-- two way data binding -->
+<input type="text" class="form-control" [(ngModel)]="counterName">
+
+<!-- <p>{{ counterName}} </p> -->
+<button class="btn btn-info my-2" [disabled]="!allowNewCounter" (click)="onCreateCounter()">
+  Add Counter
+</button>
+<!-- <p>{{ allowNewCounter }} </p>
+<p [innerText]="allowNewCounter"></p> -->
+<!-- <p>{{ counterCreationStatus }}</p> -->
+<!-- <p *ngIf="counterCreated; else noCounter">A new counter was created, its name is: {{ counterName }}</p> -->
+<p *ngIf="counterCreated">A new counter was created, its name is: {{ counterName }}</p>
+<p *ngIf="!counterCreated">No counter was created yet!</p>
+<!-- <ng-template #noCounter>
+  <p>No counter was created yet!</p>
+</ng-template> -->
+
+<app-counter *ngFor="let counter of counters"></app-counter>

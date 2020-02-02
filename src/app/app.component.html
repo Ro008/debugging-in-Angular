@@ -1,15 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4>I'm a title in the AppComponent!</h4>
-      <app-counters></app-counters>
-      <hr>
-      <!-- <app-exercise-directives></app-exercise-directives> -->
-      <button class="btn btn-warning" (click)="displayClickDate()">Click me to see the time</button>
-      <li *ngFor="let click of clicks; let i = index" [ngStyle]="{backgroundColor: i > 2 ? 'blue': 'transparent'}"
-        [ngClass]="{'text-white': i > 2}">
-        {{ click }}
-      </li>
+      <h3>My counters</h3>
+      <button class="btn btn-primary" (click)="onAddCounter()">Add counter</button>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let counter of counters; let i = index">{{counter}}</li>
+      </ul>
     </div>
   </div>
 </div>

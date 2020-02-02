@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  clicks = [];
 
-  displayClickDate() {
-    this.clicks.push(new Date());
+  counters;
+
+  onAddCounter() {
+    this.counters.push('Another counter was added');
   }
 }
